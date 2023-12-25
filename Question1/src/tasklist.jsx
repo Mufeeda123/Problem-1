@@ -2,7 +2,7 @@
 import React from "react";
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 
-function TaskList({ todos, showCompleted, selectedTodoIndex, onEdit, onDelete }) {
+function TaskList({ todos, todo,showCompleted, selectedTodoIndex, onEdit, onDelete }) {
   return (
     <div className="flex flex-col mt-[10px] items-center">
       {todos.map((to) => (
