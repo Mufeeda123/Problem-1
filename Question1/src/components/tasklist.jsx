@@ -2,7 +2,15 @@
 import React from "react";
 import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 
-function TaskList({ todos, todo,showCompleted, selectedTodoIndex, onEdit, onDelete }) {
+function TaskList({
+  todos,
+  setTodos,
+  todo,
+  showCompleted,
+  selectedTodoIndex,
+  onEdit,
+  onDelete,
+}) {
   return (
     <div className="flex flex-col mt-[10px] items-center">
       {todos.map((to) => (
@@ -10,7 +18,7 @@ function TaskList({ todos, todo,showCompleted, selectedTodoIndex, onEdit, onDele
           key={to.index}
           className={`w-[350px] h-[45px] justify-center items-center bg-yellow-200 border border-slate-400 bg-yellow-200 ${
             selectedTodoIndex === to.index ? "hidden" : ""
-          } ${(!showCompleted && to.completed) ? "hidden" : ""}`}
+          } ${!showCompleted && to.completed ? "hidden" : ""}`}
         >
           <div className="flex flex-row mt-3">
             <input
@@ -21,14 +29,16 @@ function TaskList({ todos, todo,showCompleted, selectedTodoIndex, onEdit, onDele
               checked={to.completed}
               onChange={() => {
                 const updatedTodos = todos.map((item) =>
-                  item.index === to.index ? { ...item, completed: !item.completed } : item
+                  item.index === to.index
+                    ? { ...item, completed: !item.completed }
+                    : item
                 );
                 setTodos(updatedTodos);
               }}
             />
             <p
               className={`text-orange-500 font-semibold ml-2 ${
-                to.completed ? "line-through text-gray-500" : ""
+                to.completed ? "line-through text-orange-300" : ""
               }`}
             >
               {to.list}
