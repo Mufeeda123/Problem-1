@@ -1,7 +1,7 @@
 import React  from "react"
-import { AiOutlinePlus, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
+import { AiOutlineEdit} from "react-icons/ai";
 
-function EditBox({selectedTodoIndex,updateodo,handleUpdate,setUpdateTodo}){
+function EditBox({selectedTodoIndex,updatetodo,handleUpdate,setUpdateTodo}){
     return(
         <>
         {selectedTodoIndex !== null && (
@@ -9,12 +9,12 @@ function EditBox({selectedTodoIndex,updateodo,handleUpdate,setUpdateTodo}){
               <div className="flex flex-row ">
                 <input
                   type="text"
-                  value={updateodo.updatelist}
+                  value={updatetodo.updatelist}
                   placeholder="🖊️ Update item..."
                   className="w-[300px] h-[45px]  bg-blue-400 border border-slate-400"
                   onChange={(event) =>
                     setUpdateTodo({
-                      ...updateodo,
+                      ...updatetodo,
                       updatelist: event.target.value,
                     })
                   }

@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlinePlus, AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
 
 function AddBox({addTodo,setTodo,todo}) {
   return (
