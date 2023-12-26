@@ -3,6 +3,7 @@ import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 
 function TaskList({
   todos,
+  
   selectedTodoIndex,
   onEdit,
   onDelete,
